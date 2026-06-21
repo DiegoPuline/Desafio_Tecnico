@@ -1,10 +1,10 @@
-package com.example.demo;
+package com.placeti.avaliacao;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class DemoApplicationTests {
+class ProjetoApiApplicationTests {
 
 	@Test
 	void contextLoads() {

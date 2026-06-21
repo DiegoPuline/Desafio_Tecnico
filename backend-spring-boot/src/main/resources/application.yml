@@ -29,6 +29,6 @@ spring:
 # configuracoes da JPA
 # --------------------------------------------------------
   jpa:
-    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect    
+    properties.hibernate.dialect: org.hibernate.dialect.H2Dialect
     defer-datasource-initialization: true
     hibernate.ddl-auto: none
