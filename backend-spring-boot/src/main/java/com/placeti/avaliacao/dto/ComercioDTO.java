@@ -1,17 +1,20 @@
 package com.placeti.avaliacao.dto;
 
+import com.placeti.avaliacao.model.TipoComercio;
+
 /**
- * DTO que guarda os dados de uma cidade
+ * DTO que guarda os dados de um comércio
  */
-public record CidadeDTO(
+public record ComercioDTO(
 
         //---------------------------------------
         // Atributos do DTO
         //---------------------------------------
         Long id,
         String nome,
-        String uf,
-        Boolean capital
+        String nomeResponsavel,
+        TipoComercio tipo,
+        Long cidadeId
 
 ) {
 }
