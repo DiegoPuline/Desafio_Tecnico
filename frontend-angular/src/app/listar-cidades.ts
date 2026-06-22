@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {ImportsModule} from './imports';
-import {Cidade} from '@domain/cidade';
+import {CityDTO} from '@domain/city-dto';
 import {ProjetoService} from '@service/projeto-service';
 import {CadastrarCidade} from './cadastrar-cidade';
 import {MessageService} from 'primeng/api';
@@ -19,12 +19,12 @@ export class ListarCidades {
     //-------------------------------------------------------
     // Lista de cidades, exibida na tabela
     //-------------------------------------------------------
-    listaCidades!: Cidade[];
+    listaCidades!: CityDTO[];
 
     //-------------------------------------------------------------
     // Atributo que guarda a cidade que foi selecionada na tabela
     //-------------------------------------------------------------
-    cidadeSelecionada: Cidade = new Cidade();
+    cidadeSelecionada: CityDTO = new CityDTO();
 
     //-------------------------------------------------------------
     // Flag usada para mostrar/esconder a janela de cadastro
@@ -55,7 +55,7 @@ export class ListarCidades {
     //-------------------------------------------------------------------------------------
     public abreJanelaParaCadastrarNovaCidade() {
         // Define a cidade selecionada como uma nova cidade
-        this.cidadeSelecionada = new Cidade();
+        this.cidadeSelecionada = new CityDTO();
 
         // Exibe a janela de cadastro
         this.mostraJanelaCadastro = true;
@@ -64,9 +64,9 @@ export class ListarCidades {
     //-------------------------------------------------------------------------------------
     /** Método chamado ao clicar no botão 'Alterar' */
     //-------------------------------------------------------------------------------------
-    public abreJanelaParaAlterarCidade(cidade: Cidade): void {
+    public abreJanelaParaAlterarCidade(cidade: CityDTO): void {
         // Copia os dados da cidade selecionada para uma nova cidade
-        this.cidadeSelecionada = new Cidade();
+        this.cidadeSelecionada = new CityDTO();
         this.cidadeSelecionada.id = cidade.id;
         this.cidadeSelecionada.nome = cidade.nome;
         this.cidadeSelecionada.uf = cidade.uf;
@@ -79,7 +79,7 @@ export class ListarCidades {
     //-------------------------------------------------------------------------------------
     /** Método chamado ao clicar no botão 'Excluir' */
     //-------------------------------------------------------------------------------------
-    public excluir(cidade: Cidade) {
+    public excluir(cidade: CityDTO) {
         // Chama o backend para excluir a cidade selecionada
         this.service.excluir(cidade).subscribe((retorno) => {
             this.messageService.add({ severity: 'success', summary: 'Info', detail: `Cidade '${cidade.nome}' excluída com sucesso!` });

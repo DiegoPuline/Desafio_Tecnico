@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ImportsModule } from './imports';
-import { Cidade } from '@domain/cidade';
+import { CityDTO } from '@domain/city-dto';
 import { ProjetoService } from '@service/projeto-service';
 import { MessageService } from 'primeng/api';
 
@@ -19,7 +19,7 @@ export class CadastrarCidade {
     //-------------------------------------------------------
     // Parâmetro de entrada para o componente
     //-------------------------------------------------------
-    @Input() public cidade: Cidade = new Cidade();
+    @Input() public cidade: CityDTO = new CityDTO();
 
     //-------------------------------------------------------
     // Evento lançado ao fechar a janela
