@@ -2,8 +2,11 @@ package com.placeti.avaliacao.controller;
 
 import com.placeti.avaliacao.dto.CidadeDTO;
 import com.placeti.avaliacao.service.ProjetoService;
+import com.placeti.avaliacao.validation.OnCreate;
+import com.placeti.avaliacao.validation.OnUpdate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +16,7 @@ import java.util.List;
 //--------------------------------------------------
 @RestController
 @RequestMapping("/cidades")
+@Validated
 public class CidadeController {
 
 	private final ProjetoService projetoService;
@@ -42,7 +46,7 @@ public class CidadeController {
 	//----------------------------------------------------------
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public void incluirCidade(@RequestBody CidadeDTO cidadeDto) {
+	public void incluirCidade(@RequestBody @Validated(OnCreate.class) CidadeDTO cidadeDto) {
 		projetoService.incluirCidade(cidadeDto);
 	}	
 	
@@ -51,7 +55,7 @@ public class CidadeController {
 	//----------------------------------------------------------
 	@PutMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void alterarCidade(@RequestBody CidadeDTO cidadeDto) {
+	public void alterarCidade(@RequestBody @Validated(OnUpdate.class) CidadeDTO cidadeDto) {
 		projetoService.alterarCidade(cidadeDto);
 	}
 	
