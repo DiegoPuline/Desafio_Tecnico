@@ -6,19 +6,19 @@
     <!-- Tabela que mostra as cidades cadastradas -->
     <p-table
         [value]="listaCidades"
+        [loading]="carregando"
         [paginator]="true"
         [rows]="5"
-        [tableStyle]="{ 'min-width': '50rem' }"
         [rowsPerPageOptions]="[5, 10, 20]"
         styleClass="p-datatable-gridlines"
         [tableStyle]="{ 'min-width': '50rem' }">
             <ng-template pTemplate="header">
                 <tr>
-                    <th>Code</th>
+                    <th style="width: 5rem">ID</th>
                     <th>Nome</th>
-                    <th>UF</th>
-                    <th>Capital</th>
-                    <th>Ação</th>
+                    <th style="width: 5rem">UF</th>
+                    <th style="width: 8rem">Capital</th>
+                    <th style="width: 250px">Ação</th>
                 </tr>
             </ng-template>
             <ng-template pTemplate="body" let-cidade>
@@ -26,12 +26,17 @@
                     <td>{{ cidade.id }}</td>
                     <td>{{ cidade.nome }}</td>
                     <td>{{ cidade.uf }}</td>
-                    <td>{{ cidade.capital }}</td>
-                    <td style="width: 250px;">
+                    <td>{{ formatarCapital(cidade.capital) }}</td>
+                    <td>
                         <p-button (click)="abreJanelaParaAlterarCidade(cidade)" label="Alterar"></p-button>
                         &nbsp;
-                        <p-button (click)="excluir(cidade)" label="Excluir"></p-button>
+                        <p-button (click)="excluir(cidade)" label="Excluir" severity="danger"></p-button>
                     </td>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="emptymessage">
+                <tr>
+                    <td colspan="5" class="text-center">Nenhuma cidade encontrada.</td>
                 </tr>
             </ng-template>
     </p-table>
@@ -39,6 +44,6 @@
     <p-button (click)="abreJanelaParaCadastrarNovaCidade()" label="Nova Cidade" />
 
     <!-- Janela para cadastro de cidade -->
-    <cadastrar-cidade *ngIf="this.mostraJanelaCadastro" [cidade]="cidadeSelecionada" (onClose)="fechaJanelaCadastro($event)"></cadastrar-cidade>
+    <cadastrar-cidade *ngIf="mostraJanelaCadastro" [cidade]="cidadeSelecionada" (onClose)="fechaJanelaCadastro($event)"></cadastrar-cidade>
 
 </div>
