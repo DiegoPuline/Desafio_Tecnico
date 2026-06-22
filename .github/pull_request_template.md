@@ -1,5 +1,5 @@
 ## Objetivo do PR
-Adição de um template para padronização de commits, PRs e bug reports, criação da entidade comércio, sequenciação da arquitetura, além de bug fixes gerais que encontrei pelo código.
+
 ## Contexto / Issue
 Link para issue(s):
 [Closes #]

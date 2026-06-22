@@ -2,6 +2,7 @@ package com.placeti.avaliacao.controller;
 
 import com.placeti.avaliacao.dto.CidadeDTO;
 import com.placeti.avaliacao.service.ProjetoService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class CidadeController {
 	//----------------------------------------------------------
 	@GetMapping("/{id}")
 	public ResponseEntity<CidadeDTO> buscarPeloId(@PathVariable Long id) {
-		// TODO: Responde GET em http://localhost:8080/placeti/cidades/1
+		return ResponseEntity.ok(projetoService.pesquisarCidade(id));
 	}
 	
 	//----------------------------------------------------------
@@ -33,43 +34,33 @@ public class CidadeController {
 	//----------------------------------------------------------
 	@GetMapping
 	public List<CidadeDTO> pesquisarCidades() {
-		// TODO: Responde GET em http://localhost:8080/placeti/cidades
+		return projetoService.pesquisarCidades();
 	}
 	
 	//----------------------------------------------------------
 	/** Endpoint para incluir nova cidade */
 	//----------------------------------------------------------
 	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
 	public void incluirCidade(@RequestBody CidadeDTO cidadeDto) {
-		//	TODO: Responde POST em http://localhost:8080/placeti/cidades
-		//	Envia JSON no body:
-		//	{
-		//	 	"nome": "Florianópolis",
-		//	  	"uf": "SC",
-		//	   	"capital": true
-		//	}
+		projetoService.incluirCidade(cidadeDto);
 	}	
 	
 	//----------------------------------------------------------
 	/** Endpoint para alterar cidade */
 	//----------------------------------------------------------
 	@PutMapping
+	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void alterarCidade(@RequestBody CidadeDTO cidadeDto) {
-		// TODO: Responde PUT em http://localhost:8080/placeti/cidades
-		//   Envia JSON no body:
-		//   {
-		//     "id": 11,
-		//     "nome": "Blumenau",
-		//     "uf": "SC",
-		//     "capital": false
-		//   }
+		projetoService.alterarCidade(cidadeDto);
 	}
 	
 	//----------------------------------------------------------
 	/** Endpoint para excluir uma cidade */
 	//----------------------------------------------------------
 	@DeleteMapping("/{idCidade}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void excluirCidade(@PathVariable Long idCidade) {
-		// Responde DELETE em http://localhost:8080/placeti/cidades/{idCidade}
+		projetoService.excluirCidade(idCidade);
 	}	
 }
