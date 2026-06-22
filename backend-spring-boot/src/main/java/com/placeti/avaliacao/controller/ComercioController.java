@@ -2,8 +2,11 @@ package com.placeti.avaliacao.controller;
 
 import com.placeti.avaliacao.dto.ComercioDTO;
 import com.placeti.avaliacao.service.ProjetoService;
+import com.placeti.avaliacao.validation.OnCreate;
+import com.placeti.avaliacao.validation.OnUpdate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,6 +16,7 @@ import java.util.List;
 //--------------------------------------------------
 @RestController
 @RequestMapping("/comercios")
+@Validated
 public class ComercioController {
 
 	private final ProjetoService projetoService;
@@ -42,7 +46,7 @@ public class ComercioController {
 	//----------------------------------------------------------
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public void incluirComercio(@RequestBody ComercioDTO comercioDto) {
+	public void incluirComercio(@RequestBody @Validated(OnCreate.class) ComercioDTO comercioDto) {
 		projetoService.incluirComercio(comercioDto);
 	}
 
@@ -51,7 +55,7 @@ public class ComercioController {
 	//----------------------------------------------------------
 	@PutMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void alterarComercio(@RequestBody ComercioDTO comercioDto) {
+	public void alterarComercio(@RequestBody @Validated(OnUpdate.class) ComercioDTO comercioDto) {
 		projetoService.alterarComercio(comercioDto);
 	}
 
