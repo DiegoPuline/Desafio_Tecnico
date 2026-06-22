@@ -1,0 +1,14 @@
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\model\TipoComercio.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\repository\ComercioRepository.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\validation\OnCreate.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\model\Cidade.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\ProjetoApiApplication.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\model\Comercio.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\validation\OnUpdate.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\controller\CidadeController.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\controller\ComercioController.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\service\ProjetoService.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\dto\CidadeDTO.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\controller\GlobalExceptionHandler.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\dto\ComercioDTO.java
+C:\Users\diego\OneDrive\Documentos\Coding\DesafioTecnicoPlaceIT\desafio_tecnico_ESTAG_2026\desafio-tecnico\backend-spring-boot\src\main\java\com\placeti\avaliacao\repository\CidadeRepository.java
