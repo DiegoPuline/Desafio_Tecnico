@@ -19,7 +19,7 @@ export class ListarCidades {
     //-------------------------------------------------------
     // Lista de cidades, exibida na tabela
     //-------------------------------------------------------
-    listaCidades!: CityDTO[];
+    listaCidades: CityDTO[] = [];
 
     //-------------------------------------------------------------
     // Atributo que guarda a cidade que foi selecionada na tabela
@@ -47,7 +47,9 @@ export class ListarCidades {
     /** Método chamado para recuperar cidades para a tabela */
     //-------------------------------------------------------------------------------------
     private pesquisarCidades(): void {
-        
+        this.service.pesquisarCidades().subscribe((cidades) => {
+            this.listaCidades = cidades;
+        });
     }
 
     //-------------------------------------------------------------------------------------
@@ -98,6 +100,7 @@ export class ListarCidades {
 
         // Se salvou, atualiza a lista de cidades
         if(salvou) {
+           this.messageService.add({ severity: 'success', summary: 'Info', detail: 'Cidade salva com sucesso!' });
            setTimeout(() => this.pesquisarCidades(), 100);
         }
     }
