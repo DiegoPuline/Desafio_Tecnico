@@ -1,0 +1,26 @@
+# Node / Angular
+frontend-angular/node_modules/
+frontend-angular/.angular/
+frontend-angular/dist/
+frontend-angular/.sass-cache/
+
+# Java / Maven
+backend-spring-boot/target/
+*.class
+*.jar
+*.war
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# SO
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
