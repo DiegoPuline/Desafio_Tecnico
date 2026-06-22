@@ -2,7 +2,6 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ImportsModule } from './imports';
 import { CityDTO } from '@domain/city-dto';
 import { ProjetoService } from '@service/projeto-service';
-import { MessageService } from 'primeng/api';
 
 //-------------------------------------------------------------------------------------
 /** Tela para cadastro de cidades */
@@ -29,13 +28,15 @@ export class CadastrarCidade {
     //--------------------------------------------------------------
     /** Construtor. */
     //--------------------------------------------------------------
-    constructor() {}
+    constructor(private service: ProjetoService) {}
 
     //-------------------------------------------------------------------------------------
     /** Método chamado ao clicar no botao 'salvar' */
     //-------------------------------------------------------------------------------------
     public salvar(): void {
-
+        this.service.salvar(this.cidade).subscribe(() => {
+            this.eventoFechaJanela.emit(true);
+        });
     }
 
     //-------------------------------------------------------------------------------------
