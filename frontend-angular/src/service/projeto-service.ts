@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Cidade } from '@domain/cidade';
+import { CityDTO } from '@domain/city-dto';
 import { Observable, from } from 'rxjs';
 import {environment} from "../app/environments/environment";
 
@@ -12,19 +12,19 @@ export class ProjetoService {
     //------------------------------------------------
     /** Recupera a lista de cidades */
     //------------------------------------------------
-    pesquisarCidades(): Observable<Cidade[]> {
+    pesquisarCidades(): Observable<CityDTO[]> {
     }
 
     //------------------------------------------------
     /** Exclui a cidade informada */
     //------------------------------------------------
-    excluir(cidade: Cidade): Observable<any> {
+    excluir(cidade: CityDTO): Observable<any> {
     }
 
     //------------------------------------------------
     /** Salva a cidade informada */
     //------------------------------------------------
-    salvar(cidade: Cidade): Observable<any> {
+    salvar(cidade: CityDTO): Observable<any> {
     }
 
 }
