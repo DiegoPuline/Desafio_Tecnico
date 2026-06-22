@@ -2,6 +2,7 @@ package com.placeti.avaliacao.controller;
 
 import com.placeti.avaliacao.dto.ComercioDTO;
 import com.placeti.avaliacao.service.ProjetoService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class ComercioController {
 	//----------------------------------------------------------
 	@GetMapping("/{id}")
 	public ResponseEntity<ComercioDTO> buscarPeloId(@PathVariable Long id) {
-		// TODO: Responde GET em http://localhost:8080/placeti/comercios/1
+		return ResponseEntity.ok(projetoService.pesquisarComercio(id));
 	}
 
 	//----------------------------------------------------------
@@ -33,30 +34,33 @@ public class ComercioController {
 	//----------------------------------------------------------
 	@GetMapping
 	public List<ComercioDTO> pesquisarComercios() {
-		// TODO: Responde GET em http://localhost:8080/placeti/comercios
+		return projetoService.pesquisarComercios();
 	}
 
 	//----------------------------------------------------------
 	/** Endpoint para incluir novo comércio */
 	//----------------------------------------------------------
 	@PostMapping
+	@ResponseStatus(HttpStatus.CREATED)
 	public void incluirComercio(@RequestBody ComercioDTO comercioDto) {
-		// TODO: Responde POST em http://localhost:8080/placeti/comercios
+		projetoService.incluirComercio(comercioDto);
 	}
 
 	//----------------------------------------------------------
 	/** Endpoint para alterar comércio */
 	//----------------------------------------------------------
 	@PutMapping
+	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void alterarComercio(@RequestBody ComercioDTO comercioDto) {
-		// TODO: Responde PUT em http://localhost:8080/placeti/comercios
+		projetoService.alterarComercio(comercioDto);
 	}
 
 	//----------------------------------------------------------
 	/** Endpoint para excluir um comércio */
 	//----------------------------------------------------------
 	@DeleteMapping("/{idComercio}")
+	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void excluirComercio(@PathVariable Long idComercio) {
-		// TODO: Responde DELETE em http://localhost:8080/placeti/comercios/{idComercio}
+		projetoService.excluirComercio(idComercio);
 	}
 }
